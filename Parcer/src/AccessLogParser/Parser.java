@@ -28,10 +28,10 @@ public class Parser{
     }
 
     protected void processLine(String lastLine) {
-        String[] fields = lastLine.split(" ");
-        for (String s : fields) {
-            System.out.println(s);
-        }
+//        String[] fields = lastLine.split(" ");
+//        for (String s : fields) {
+//            System.out.println(s);
+//        }
         Scanner scanner;
         scanner = new Scanner(lastLine);
         scanner.useDelimiter(" ");
@@ -53,7 +53,7 @@ public class Parser{
             String CONTENT_COUNT = scanner.next();
             String STORAGE_PROCESSING_TIME = scanner.next();
 
-            log("TIMESTAMP : " + TIMESTAMP.trim() + ", REQUEST_ID : " + REQUEST_ID.trim());
+            log("TIMESTAMP : " + TIMESTAMP.trim() + ", REQUEST_ID : " + REQUEST_ID.trim() + ", LOCAL_IP : " + LOCAL_IP.trim() + ", REMOTE_IP : " + REMOTE_IP.trim() + ", USER_NAME : " + USER_NAME.trim() + ", HTTP_METHOD : " + HTTP_METHOD.trim() + ", NAMESPACE : " + NAMESPACE.trim() + ", BUCKET : " + BUCKET.trim() + ", OBJECT_NAME : " + OBJECT_NAME.trim() + ", QUERY_STRING : " + QUERY_STRING.trim() + ", PROTOCOL : " + PROTOCOL.trim() + ", STATUS_CODE : " + STATUS_CODE.trim() + ", TOTAL_TIME : " + TOTAL_TIME.trim() + ", CONTENT_READ : " + CONTENT_READ.trim() + ", CONTENT_COUNT : " + CONTENT_COUNT.trim() + ", STORAGE_PROCESSING_TIME: " + STORAGE_PROCESSING_TIME.trim());
         } else {
             log("Empty or invalid line. Unable to process.");
         }
